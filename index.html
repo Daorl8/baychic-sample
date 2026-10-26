@@ -106,13 +106,8 @@ p{ margin:0; }
 .hero figure img{ width:100%; aspect-ratio:4/5; object-fit:cover; border:2px solid var(--ink); border-radius:4px; }
 .hero figure .badge{ position:absolute; left:-12px; bottom:22px; background:var(--yel); border:2px solid var(--ink); padding:8px 14px; font-family:var(--serif); font-weight:800; font-size:1rem; transform:rotate(-4deg); border-radius:4px; }
 
-/* 라인업 마키 (검정 띠) */
-.band{ background:var(--ink); color:var(--bg); overflow:hidden; white-space:nowrap; padding:14px 0; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); }
-.band p{ margin:0; display:inline-flex; will-change:transform; }
-.band span{ font-family:var(--serif); font-weight:700; font-size:clamp(1.05rem,2.4vw,1.4rem); padding-right:28px; }
-.band i{ font-style:normal; color:var(--yel); padding-right:28px; }
-
 /* 샌드베이글 */
+#sandbagel{ border-top:2px solid var(--ink); }
 .sb-g{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:42px; }
 @media (min-width:900px){ .sb-g{ grid-template-columns:repeat(3,1fr); gap:18px; } }
 .sb-g figure{ margin:0; }
@@ -132,12 +127,13 @@ p{ margin:0; }
 .dcard h3 span{ display:block; font-family:var(--round); font-weight:400; font-size:1.05rem; margin-top:6px; }
 .dcard p{ margin-top:10px; color:var(--soft); font-size:.92rem; }
 
-/* 포장 */
-.wrap-sec .grid2{ display:grid; gap:30px; align-items:center; }
-@media (min-width:900px){ .wrap-sec .grid2{ grid-template-columns:1fr 1fr; gap:60px; } }
+/* 포장 (디저트 섹션 안 가로 카드) */
+.dpack{ display:grid; gap:18px; align-items:center; border:2px solid var(--ink); border-radius:4px; background:var(--bg); padding:14px; }
+@media (min-width:900px){ .dpack{ grid-column:1/-1; grid-template-columns:1fr 1fr; gap:28px; } }
 .bags{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
-.bags img{ width:100%; aspect-ratio:4/5; object-fit:cover; border:2px solid var(--ink); border-radius:4px; }
-.bags img:last-child{ margin-top:40px; }
+.bags img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:2px; }
+.dpack h3{ font-family:var(--serif); font-weight:800; font-size:clamp(1.4rem,3vw,1.8rem); line-height:1.1; }
+.dpack h3 span{ display:block; font-family:var(--round); font-weight:400; font-size:1.05rem; margin-top:6px; }
 
 /* 라인업 공지 (검정 면 + 고양이) */
 .notice{ background:var(--ink); color:var(--bg); }
@@ -210,8 +206,6 @@ p{ margin:0; }
     </div>
   </section>
 
-  <div class="band" aria-hidden="true"><p id="band"><span>Mugwort Fig</span><i>·</i><span>Choco Pistachio Dubai</span><i>·</i><span>Strawberry Milk</span><i>·</i><span>Choco Banana</span><i>·</i><span>Orange Shine</span><i>·</i><span>Jeju Tangerine Mochi</span><i>·</i><span>Black Sesame Injeolmi</span><i>·</i><span>A Lot of Milk Melon</span><i>·</i><span>Milk Pistachio Fig</span><i>·</i><span>Blueberry Cream Cheesecake</span><i>·</i></p></div>
-
   <section class="sec" id="sandbagel" aria-labelledby="sb-h">
     <div class="wrap">
       <div class="head reveal">
@@ -241,20 +235,13 @@ p{ margin:0; }
       <div class="desserts">
         <div class="dcard reveal"><img loading="lazy" src="bc-bagel.webp" alt="굽기 전 판 위에 줄지어 놓인 베이글 반죽" width="800" height="1000" /><div><h3>Bagel<span>쫀득하고 부드러운 베이글</span></h3><p>샌드베이글의 바탕이 되는 베이글을 직접 만들어요.</p></div></div>
         <div class="dcard reveal"><img loading="lazy" src="bc-brownie.webp" alt="딸기를 올린 초콜릿 브라우니" width="800" height="1000" /><div><h3>Brownie &amp; Cheesecake<span>수제 브라우니 · 치즈케이크</span></h3><p>직접 수제로 만들어 퀄리티 있는 브라우니와 치즈케이크.</p></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="sec wrap-sec" aria-labelledby="bag-h">
-    <div class="wrap grid2">
-      <div class="bags reveal">
-        <img loading="lazy" src="bc-bag.webp" alt="검은 고양이가 그려진 흰 종이 쇼핑백" width="700" height="875" />
-        <img loading="lazy" src="bc-giftbag.webp" alt="검은 고양이가 그려진 빨간 보냉 가방" width="700" height="875" />
-      </div>
-      <div class="reveal" style="--d:.1s">
-        <p class="label">Take Out <span class="k">포장</span></p>
-        <h2 id="bag-h" class="en" style="font-size:clamp(1.9rem,5vw,3rem);line-height:1.1;margin-top:12px">Wrapped<br />with a cat.</h2>
-        <p class="ko" style="font-size:1.25rem;margin-top:12px">고양이가 그려진 가방에 담아 드려요</p>
+        <div class="dpack reveal">
+          <div class="bags">
+            <img loading="lazy" src="bc-bag.webp" alt="검은 고양이가 그려진 흰 종이 쇼핑백" width="700" height="875" />
+            <img loading="lazy" src="bc-giftbag.webp" alt="검은 고양이가 그려진 빨간 보냉 가방" width="700" height="875" />
+          </div>
+          <div><h3>Take Out<span>고양이가 그려진 가방에 담아 드려요</span></h3></div>
+        </div>
       </div>
     </div>
   </section>
@@ -311,18 +298,6 @@ p{ margin:0; }
 
 <script>
 (function(){
-  /* 라인업 마키: 항목 복제 후 setInterval로 이동, 화면 밖이면 멈춤 */
-  var band=document.getElementById('band');
-  if(band){
-    band.innerHTML+=band.innerHTML;
-    var x=0, half=0, wrap=band.parentNode;
-    setInterval(function(){
-      var r=wrap.getBoundingClientRect(); if(r.bottom<0||r.top>window.innerHeight) return;
-      if(!half) half=band.scrollWidth/2;
-      x-=1; if(-x>=half) x+=half;
-      band.style.transform='translateX('+x+'px)';
-    },33);
-  }
   /* 리빌 */
   var pending=[].slice.call(document.querySelectorAll('.reveal'));
   pending.forEach(function(el){
