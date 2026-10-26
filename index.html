@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>베이시크 Bay Chic | 경주 샌드베이글 · 수제 브라우니 · 치즈케이크</title>
+<meta name="description" content="쫀득하고 부드러운 베이글과 직접 수제로 만든 브라우니 · 치즈케이크, 동물성 생크림을 넣은 샌드베이글이 있는 경주 디저트 샵. 수~일 11:30~19:00, 월 · 화 휴무." />
+<link rel="canonical" href="https://baychic-sample.lgt3232.workers.dev/" />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="ko_KR" />
+<meta property="og:site_name" content="베이시크 Bay Chic" />
+<meta property="og:title" content="베이시크 Bay Chic · 경주 샌드베이글" />
+<meta property="og:description" content="쫀득하고 부드러운 베이글, 동물성 생크림 샌드베이글, 수제 브라우니." />
+<meta property="og:url" content="https://baychic-sample.lgt3232.workers.dev/" />
+<meta property="og:image" content="https://baychic-sample.lgt3232.workers.dev/og-baychic.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="theme-color" content="#FCF3E2" />
+<link rel="icon" href="favicon.png" type="image/png" />
+<!-- 시안 도메인 = baychic-sample.lgt3232.workers.dev. 고객 인계 시 grep lgt3232 → canonical·og:url·og:image·JSON-LD url/image 5곳 치환 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "베이시크 Bay Chic",
+  "url": "https://baychic-sample.lgt3232.workers.dev/",
+  "image": "https://baychic-sample.lgt3232.workers.dev/og-baychic.jpg",
+  "telephone": "+82-507-1350-2022",
+  "address": { "@type": "PostalAddress", "streetAddress": "포석로 1064-4 1층", "addressLocality": "경주시", "addressRegion": "경상북도", "addressCountry": "KR" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday","Thursday","Friday","Saturday","Sunday"], "opens": "11:30", "closes": "19:00" }
+  ],
+  "sameAs": ["https://www.instagram.com/baychic_gyeongju/"]
+}
+</script>
+<style>
+@font-face{ font-family:"BC Serif"; font-weight:600 800; font-display:swap; src:url("bc-fraunces.woff2") format("woff2"); }
+@font-face{ font-family:"BC Round"; font-weight:400; font-display:swap; src:url("bc-jua.woff2") format("woff2"); }
+@font-face{ font-family:"BC Sans"; font-weight:400 700; font-display:swap; src:url("bc-pretendard.woff2") format("woff2"); }
+
+/* 토큰: 고양이 캐릭터 배경 크림(실측) · 고양이 검정 · 눈 노랑(실측) */
+:root{
+  --bg:#FCF3E2;          /* 캐릭터 배경 실측 (다올 지정) */
+  --paper:#FFFAF0;
+  --ink:#1C1A17;         /* bg 대비 15.8:1 */
+  --soft:#5E554A;        /* bg 대비 6.6:1 */
+  --yel:#DCDC30;         /* 고양이 눈 실측 · ink 대비 11.8:1 (면 · 칩에만) */
+  --line:#E7DAC2;
+  --dark-soft:#B9B2A6;   /* ink 면 위 8.3:1 */
+  --serif:"BC Serif","BC Round","BC Sans",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --round:"BC Round","BC Sans",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --sans:"BC Sans",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --wrap:1140px;
+}
+*{ box-sizing:border-box; }
+html{ -webkit-text-size-adjust:100%; }
+body{ margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans); font-size:16px; line-height:1.75; word-break:keep-all; overflow-x:hidden; }
+img{ max-width:100%; height:auto; display:block; }
+a{ color:inherit; text-decoration:none; }
+h1,h2,h3{ margin:0; }
+p{ margin:0; }
+.wrap{ width:min(100% - 40px, var(--wrap)); margin:0 auto; }
+:focus-visible{ outline:2px solid var(--ink); outline-offset:3px; }
+.en{ font-family:var(--serif); font-weight:800; letter-spacing:-.01em; }
+.ko{ font-family:var(--round); font-weight:400; }
+.label{ display:inline-flex; align-items:center; gap:8px; font-family:var(--serif); font-weight:700; font-size:.95rem; }
+.label .k{ font-family:var(--round); font-size:.9rem; color:var(--soft); }
+.sec{ padding:76px 0; }
+@media (min-width:900px){ .sec{ padding:110px 0; } }
+.head h2{ font-size:clamp(2rem,5.4vw,3.4rem); line-height:1.1; margin-top:12px; }
+.head .sub{ font-family:var(--round); font-size:clamp(1.15rem,2.6vw,1.45rem); margin-top:10px; }
+.head p.d{ margin-top:12px; color:var(--soft); max-width:34em; }
+
+.btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:52px; padding:0 22px; border:2px solid var(--ink); border-radius:4px; font-weight:600; font-size:.96rem; transition:background .2s ease, color .2s ease, transform .15s ease; }
+.btn.fill{ background:var(--ink); color:var(--bg); }
+.btn.yel{ background:var(--yel); }
+.btn small{ font-weight:400; font-size:.8rem; opacity:.8; }
+.btn:active{ transform:scale(.97); }
+@media (hover:hover){ .btn:not(.fill):hover{ background:var(--ink); color:var(--bg); } .btn.fill:hover{ background:var(--yel); color:var(--ink); } }
+
+/* 헤더 */
+.site-head{ position:sticky; top:0; z-index:50; background:rgba(252,243,226,.94); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:2px solid var(--ink); }
+.site-head .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; gap:14px; }
+.brand{ display:flex; align-items:center; gap:10px; }
+.brand img{ width:46px; }
+.brand b{ font-family:var(--serif); font-weight:800; font-size:1.25rem; line-height:1; }
+.brand span{ display:block; font-family:var(--round); font-size:.8rem; color:var(--soft); margin-top:3px; }
+.nav{ display:none; gap:26px; font-family:var(--serif); font-weight:700; }
+@media (min-width:900px){ .nav{ display:flex; } }
+@media (hover:hover){ .nav a:hover{ text-decoration:underline; text-decoration-thickness:2px; text-underline-offset:5px; } }
+.site-head .btn{ min-height:40px; padding:0 16px; font-size:.86rem; }
+
+/* 히어로 */
+.hero{ padding:40px 0 70px; }
+.hero .wrap{ display:grid; gap:38px; align-items:center; }
+@media (min-width:900px){ .hero{ padding:70px 0 110px; } .hero .wrap{ grid-template-columns:1.05fr .95fr; gap:64px; } }
+.hero .cat{ width:min(56%,280px); }
+.hero h1{ font-family:var(--serif); font-weight:800; font-size:clamp(2.4rem,7vw,4.4rem); line-height:1.02; letter-spacing:-.02em; margin-top:26px; }
+.hero h1 em{ font-style:normal; background:var(--yel); padding:0 .12em; }
+.hero .ko-l{ font-family:var(--round); font-size:clamp(1.25rem,3vw,1.6rem); margin-top:18px; }
+.hero .d{ margin-top:12px; color:var(--soft); max-width:30em; }
+.hero .cta{ display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
+.hero .hours{ margin-top:16px; font-size:.88rem; color:var(--soft); }
+.hero figure{ margin:0; position:relative; }
+.hero figure img{ width:100%; aspect-ratio:4/5; object-fit:cover; border:2px solid var(--ink); border-radius:4px; }
+.hero figure .badge{ position:absolute; left:-12px; bottom:22px; background:var(--yel); border:2px solid var(--ink); padding:8px 14px; font-family:var(--serif); font-weight:800; font-size:1rem; transform:rotate(-4deg); border-radius:4px; }
+
+/* 라인업 마키 (검정 띠) */
+.band{ background:var(--ink); color:var(--bg); overflow:hidden; white-space:nowrap; padding:14px 0; border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); }
+.band p{ margin:0; display:inline-flex; will-change:transform; }
+.band span{ font-family:var(--serif); font-weight:700; font-size:clamp(1.05rem,2.4vw,1.4rem); padding-right:28px; }
+.band i{ font-style:normal; color:var(--yel); padding-right:28px; }
+
+/* 샌드베이글 */
+.sb-g{ display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:42px; }
+@media (min-width:900px){ .sb-g{ grid-template-columns:repeat(3,1fr); gap:18px; } }
+.sb-g figure{ margin:0; }
+.sb-g img{ width:100%; aspect-ratio:4/5; object-fit:cover; border:2px solid var(--ink); border-radius:4px; }
+.sb-g figcaption{ margin-top:8px; font-family:var(--round); font-size:1rem; }
+.sb-note{ margin-top:26px; display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; }
+.chip{ display:inline-block; background:var(--yel); border:2px solid var(--ink); padding:4px 12px; font-family:var(--round); font-size:.95rem; border-radius:4px; }
+.sb-note p{ color:var(--soft); font-size:.92rem; }
+
+/* 디저트 (흰 면) */
+.dessert-sec{ background:var(--paper); border-top:2px solid var(--ink); border-bottom:2px solid var(--ink); }
+.desserts{ display:grid; gap:18px; margin-top:42px; }
+@media (min-width:900px){ .desserts{ grid-template-columns:1fr 1fr; gap:28px; } }
+.dcard{ display:grid; grid-template-columns:42% 1fr; gap:18px; align-items:center; border:2px solid var(--ink); border-radius:4px; background:var(--bg); padding:14px; }
+.dcard img{ width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:2px; }
+.dcard h3{ font-family:var(--serif); font-weight:800; font-size:clamp(1.4rem,3vw,1.8rem); line-height:1.1; }
+.dcard h3 span{ display:block; font-family:var(--round); font-weight:400; font-size:1.05rem; margin-top:6px; }
+.dcard p{ margin-top:10px; color:var(--soft); font-size:.92rem; }
+
+/* 포장 */
+.wrap-sec .grid2{ display:grid; gap:30px; align-items:center; }
+@media (min-width:900px){ .wrap-sec .grid2{ grid-template-columns:1fr 1fr; gap:60px; } }
+.bags{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.bags img{ width:100%; aspect-ratio:4/5; object-fit:cover; border:2px solid var(--ink); border-radius:4px; }
+.bags img:last-child{ margin-top:40px; }
+
+/* 라인업 공지 (검정 면 + 고양이) */
+.notice{ background:var(--ink); color:var(--bg); }
+.notice .wrap{ display:grid; gap:26px; align-items:center; text-align:center; justify-items:center; }
+.notice img{ width:min(46%,220px); }
+.notice h2{ font-family:var(--serif); font-weight:800; font-size:clamp(1.9rem,5vw,3rem); line-height:1.1; }
+.notice p{ font-family:var(--round); font-size:1.15rem; color:var(--dark-soft); margin-top:10px; }
+.notice .btn{ border-color:var(--yel); background:var(--yel); color:var(--ink); }
+@media (hover:hover){ .notice .btn:hover{ background:transparent; color:var(--yel); } }
+
+/* 오시는 길 */
+.visit{ display:grid; gap:36px; margin-top:42px; }
+@media (min-width:900px){ .visit{ grid-template-columns:1fr 1fr; gap:56px; } }
+.info{ margin:0; border-top:2px solid var(--ink); }
+.info > div{ display:grid; grid-template-columns:86px 1fr; gap:14px; padding:16px 0; border-bottom:1px solid var(--line); }
+.info dt{ font-family:var(--round); font-size:1.05rem; }
+.info dd{ margin:0; }
+.info dd small{ display:block; color:var(--soft); font-size:.86rem; margin-top:3px; }
+.visit .links{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+.mapframe{ width:100%; height:340px; border:2px solid var(--ink); border-radius:4px; }
+@media (min-width:900px){ .mapframe{ height:100%; min-height:420px; } }
+
+/* 푸터 */
+.foot{ border-top:2px solid var(--ink); padding:44px 0 120px; text-align:center; font-size:.86rem; color:var(--soft); }
+@media (min-width:900px){ .foot{ padding:48px 0; } }
+.foot img{ width:110px; margin:0 auto 14px; }
+
+/* 모바일 하단 바: 인스타(주) · 전화 · 길찾기 */
+.quick{ position:fixed; left:0; right:0; bottom:0; z-index:60; display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:6px; padding:8px 10px calc(8px + env(safe-area-inset-bottom)); background:rgba(252,243,226,.97); border-top:2px solid var(--ink); }
+.quick a{ display:flex; align-items:center; justify-content:center; min-height:48px; border:2px solid var(--ink); border-radius:4px; font-size:.86rem; font-weight:600; }
+.quick a.fill{ background:var(--ink); color:var(--bg); }
+@media (min-width:900px){ .quick{ display:none; } }
+
+/* 리빌: setInterval 구동 */
+.js .reveal{ opacity:0; transform:translateY(20px); transition:opacity .6s ease, transform .6s cubic-bezier(.2,.7,.2,1); transition-delay:var(--d,0s); }
+.js .reveal.in{ opacity:1; transform:none; }
+@media print{ .js .reveal{ opacity:1; transform:none; } }
+</style>
+<noscript><style>.reveal{ opacity:1 !important; transform:none !important; }</style></noscript>
+</head>
+<body>
+<script>document.documentElement.classList.add('js');</script>
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="베이시크 처음으로"><img src="bc-cat-face.webp" alt="" width="300" height="198" /><div><b>Bay Chic</b><span>베이시크 · 경주</span></div></a>
+    <nav class="nav" aria-label="주요 메뉴"><a href="#sandbagel">Sand Bagel</a><a href="#dessert">Dessert</a><a href="#lineup">Line Up</a><a href="#visit">Visit</a></nav>
+    <a class="btn fill" href="https://www.instagram.com/baychic_gyeongju/" target="_blank" rel="noopener">인스타그램</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <img class="cat" src="bc-cat.webp" alt="노란 눈의 검은 고양이 캐릭터와 Bay Chic 글씨" width="700" height="618" />
+        <h1>Sand Bagel,<br /><em>Brownie</em> &amp; Cheesecake</h1>
+        <p class="ko-l">쫀득하고 부드러운 베이글</p>
+        <p class="d">쫀득하고 부드러운 베이글과 직접 수제로 만들어 퀄리티 있는 브라우니 · 치즈케이크, 동물성 생크림 등을 넣은 샌드베이글이 있는 디저트 샵 :)</p>
+        <div class="cta">
+          <a class="btn fill" href="https://www.instagram.com/baychic_gyeongju/" target="_blank" rel="noopener">오늘의 라인업 <small>인스타그램</small></a>
+          <a class="btn" href="tel:050713502022">전화 <small>0507-1350-2022</small></a>
+          <a class="btn" href="https://map.naver.com/p/entry/place/2044744849" target="_blank" rel="noopener">길찾기</a>
+        </div>
+        <p class="hours">수~일 11:30~19:00 · 월 · 화 휴무</p>
+      </div>
+      <figure class="reveal" style="--d:.12s">
+        <img src="bc-hero.webp" alt="무화과와 생크림을 가득 넣은 샌드베이글 단면" width="1000" height="1250" />
+        <span class="badge">Sand Bagel</span>
+      </figure>
+    </div>
+  </section>
+
+  <div class="band" aria-hidden="true"><p id="band"><span>Mugwort Fig</span><i>·</i><span>Choco Pistachio Dubai</span><i>·</i><span>Strawberry Milk</span><i>·</i><span>Choco Banana</span><i>·</i><span>Orange Shine</span><i>·</i><span>Jeju Tangerine Mochi</span><i>·</i><span>Black Sesame Injeolmi</span><i>·</i><span>A Lot of Milk Melon</span><i>·</i><span>Milk Pistachio Fig</span><i>·</i><span>Blueberry Cream Cheesecake</span><i>·</i></p></div>
+
+  <section class="sec" id="sandbagel" aria-labelledby="sb-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="label">Sand Bagel <span class="k">샌드베이글</span></p>
+        <h2 id="sb-h" class="en">Cut it open.</h2>
+        <p class="sub">동물성 생크림 듬뿍, 제철 과일 가득</p>
+      </div>
+      <div class="sb-g">
+        <figure class="reveal"><img loading="lazy" src="bc-sb-fig.webp" alt="초록빛 쑥 크림과 무화과를 넣은 샌드베이글 두 개" width="700" height="875" /><figcaption>쑥 · 무화과</figcaption></figure>
+        <figure class="reveal"><img loading="lazy" src="bc-sb-grape.webp" alt="청포도와 오렌지를 넣은 샌드베이글" width="700" height="875" /><figcaption>청포도 · 오렌지</figcaption></figure>
+        <figure class="reveal"><img loading="lazy" src="bc-sb-strawberry.webp" alt="딸기를 넣은 샌드베이글" width="700" height="875" /><figcaption>딸기</figcaption></figure>
+        <figure class="reveal"><img loading="lazy" src="bc-sb-cherry.webp" alt="체리와 분홍 크림을 넣은 샌드베이글" width="700" height="875" /><figcaption>체리 · 크림</figcaption></figure>
+        <figure class="reveal"><img loading="lazy" src="bc-sb-fig2.webp" alt="무화과를 통째로 넣은 샌드베이글" width="700" height="875" /><figcaption>무화과</figcaption></figure>
+        <figure class="reveal"><img loading="lazy" src="bc-sb-oreo.webp" alt="체리와 쿠키 크림을 넣은 샌드베이글" width="700" height="875" /><figcaption>체리 · 쿠키 크림</figcaption></figure>
+      </div>
+      <div class="sb-note reveal"><span class="chip">매일 바뀌는 라인업</span><p>그날의 샌드베이글은 인스타그램 라인업 게시물에서 확인해 주세요.</p></div>
+    </div>
+  </section>
+
+  <section class="sec dessert-sec" id="dessert" aria-labelledby="ds-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="label">Dessert <span class="k">베이글 · 디저트</span></p>
+        <h2 id="ds-h" class="en">Made by hand.</h2>
+        <p class="sub">직접 수제로 만들어요</p>
+      </div>
+      <div class="desserts">
+        <div class="dcard reveal"><img loading="lazy" src="bc-bagel.webp" alt="굽기 전 판 위에 줄지어 놓인 베이글 반죽" width="800" height="1000" /><div><h3>Bagel<span>쫀득하고 부드러운 베이글</span></h3><p>샌드베이글의 바탕이 되는 베이글을 직접 만들어요.</p></div></div>
+        <div class="dcard reveal"><img loading="lazy" src="bc-brownie.webp" alt="딸기를 올린 초콜릿 브라우니" width="800" height="1000" /><div><h3>Brownie &amp; Cheesecake<span>수제 브라우니 · 치즈케이크</span></h3><p>직접 수제로 만들어 퀄리티 있는 브라우니와 치즈케이크.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec wrap-sec" aria-labelledby="bag-h">
+    <div class="wrap grid2">
+      <div class="bags reveal">
+        <img loading="lazy" src="bc-bag.webp" alt="검은 고양이가 그려진 흰 종이 쇼핑백" width="700" height="875" />
+        <img loading="lazy" src="bc-giftbag.webp" alt="검은 고양이가 그려진 빨간 보냉 가방" width="700" height="875" />
+      </div>
+      <div class="reveal" style="--d:.1s">
+        <p class="label">Take Out <span class="k">포장</span></p>
+        <h2 id="bag-h" class="en" style="font-size:clamp(1.9rem,5vw,3rem);line-height:1.1;margin-top:12px">Wrapped<br />with a cat.</h2>
+        <p class="ko" style="font-size:1.25rem;margin-top:12px">고양이가 그려진 가방에 담아 드려요</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec notice" id="lineup" aria-labelledby="lu-h">
+    <div class="wrap reveal">
+      <img loading="lazy" src="bc-cat-face.webp" alt="검은 고양이 얼굴" width="300" height="198" />
+      <div>
+        <h2 id="lu-h">Today's Line Up</h2>
+        <p>오늘의 라인업 · 휴무 일정은 인스타그램에서 먼저 알려드려요</p>
+      </div>
+      <a class="btn" href="https://www.instagram.com/baychic_gyeongju/" target="_blank" rel="noopener">@baychic_gyeongju</a>
+    </div>
+  </section>
+
+  <section class="sec" id="visit" aria-labelledby="visit-h">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="label">Visit <span class="k">오시는 길</span></p>
+        <h2 id="visit-h" class="en">Gyeongju</h2>
+      </div>
+      <div class="visit">
+        <div class="reveal">
+          <dl class="info">
+            <div><dt>주소</dt><dd>경북 경주시 포석로 1064-4 1층 베이시크</dd></div>
+            <div><dt>영업시간</dt><dd>수~일 11:30~19:00<small>매주 월 · 화요일 정기휴무</small></dd></div>
+            <div><dt>전화</dt><dd><a href="tel:050713502022">0507-1350-2022</a></dd></div>
+            <div><dt>인스타그램</dt><dd><a href="https://www.instagram.com/baychic_gyeongju/" target="_blank" rel="noopener">@baychic_gyeongju</a></dd></div>
+          </dl>
+          <div class="links">
+            <a class="btn fill" href="https://www.instagram.com/baychic_gyeongju/" target="_blank" rel="noopener">인스타그램</a>
+            <a class="btn" href="https://map.naver.com/p/entry/place/2044744849" target="_blank" rel="noopener">네이버 길찾기</a>
+            <a class="btn" href="tel:050713502022">전화하기</a>
+          </div>
+        </div>
+        <iframe class="mapframe reveal" title="베이시크 위치 지도" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=%EA%B2%BD%EB%B6%81%20%EA%B2%BD%EC%A3%BC%EC%8B%9C%20%ED%8F%AC%EC%84%9D%EB%A1%9C%201064-4&amp;z=17&amp;output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <img src="bc-cat.webp" alt="Bay Chic" width="700" height="618" loading="lazy" />
+    <p>베이시크 Bay Chic · 경북 경주시 포석로 1064-4 1층 · 0507-1350-2022<br />수~일 11:30~19:00 · 월 · 화 휴무 · © Bay Chic</p>
+  </div>
+</footer>
+
+<div class="quick" aria-label="빠른 연결">
+  <a class="fill" href="https://www.instagram.com/baychic_gyeongju/" target="_blank" rel="noopener">오늘의 라인업</a>
+  <a href="tel:050713502022">전화</a>
+  <a href="https://map.naver.com/p/entry/place/2044744849" target="_blank" rel="noopener">길찾기</a>
+</div>
+
+<script>
+(function(){
+  /* 라인업 마키: 항목 복제 후 setInterval로 이동, 화면 밖이면 멈춤 */
+  var band=document.getElementById('band');
+  if(band){
+    band.innerHTML+=band.innerHTML;
+    var x=0, half=0, wrap=band.parentNode;
+    setInterval(function(){
+      var r=wrap.getBoundingClientRect(); if(r.bottom<0||r.top>window.innerHeight) return;
+      if(!half) half=band.scrollWidth/2;
+      x-=1; if(-x>=half) x+=half;
+      band.style.transform='translateX('+x+'px)';
+    },33);
+  }
+  /* 리빌 */
+  var pending=[].slice.call(document.querySelectorAll('.reveal'));
+  pending.forEach(function(el){
+    var sib=[].slice.call(el.parentNode.children).filter(function(c){ return c.classList.contains('reveal'); });
+    if(sib.length>1 && !el.style.getPropertyValue('--d')){ el.style.setProperty('--d',(Math.min(sib.indexOf(el),5)*0.07)+'s'); }
+  });
+  var t=setInterval(function(){
+    if(!pending.length){ clearInterval(t); return; }
+    if(window.innerHeight + window.pageYOffset >= document.documentElement.scrollHeight - 4){
+      pending.forEach(function(el){ el.classList.add('in'); }); pending=[]; return;
+    }
+    var line=window.innerHeight*0.92;
+    pending=pending.filter(function(el){
+      if(el.getBoundingClientRect().top < line){ el.classList.add('in'); return false; }
+      return true;
+    });
+  },120);
+  /* 앵커 스크롤 */
+  var head=document.querySelector('.site-head');
+  [].forEach.call(document.querySelectorAll('a[href^="#"]'),function(a){
+    a.addEventListener('click',function(e){
+      var id=a.getAttribute('href'); var el=id==='#top'?document.body:document.querySelector(id);
+      if(!el) return; e.preventDefault();
+      var start=window.pageYOffset, end=id==='#top'?0:el.getBoundingClientRect().top+start-head.offsetHeight+1;
+      var t0=Date.now(), dur=520;
+      var iv=setInterval(function(){
+        var p=Math.min((Date.now()-t0)/dur,1), e2=p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2;
+        window.scrollTo(0,start+(end-start)*e2);
+        if(p>=1) clearInterval(iv);
+      },16);
+    });
+  });
+})();
+</script>
+</body>
+</html>
