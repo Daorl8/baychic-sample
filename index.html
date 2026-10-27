@@ -45,7 +45,6 @@
   --paper:#FFFAF0;
   --ink:#1C1A17;         /* bg 대비 15.8:1 */
   --soft:#5E554A;        /* bg 대비 6.6:1 */
-  --yel:#DCDC30;         /* 고양이 눈 실측 · ink 대비 11.8:1 (면 · 칩에만) */
   --line:#E7DAC2;
   --dark-soft:#B9B2A6;   /* ink 면 위 8.3:1 */
   --serif:"BC Serif","BC Round","BC Sans",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
@@ -74,10 +73,9 @@ p{ margin:0; }
 
 .btn{ display:inline-flex; align-items:center; justify-content:center; gap:8px; min-height:52px; padding:0 22px; border:2px solid var(--ink); border-radius:4px; font-weight:600; font-size:.96rem; transition:background .2s ease, color .2s ease, transform .15s ease; }
 .btn.fill{ background:var(--ink); color:var(--bg); }
-.btn.yel{ background:var(--yel); }
 .btn small{ font-weight:400; font-size:.8rem; opacity:.8; }
 .btn:active{ transform:scale(.97); }
-@media (hover:hover){ .btn:not(.fill):hover{ background:var(--ink); color:var(--bg); } .btn.fill:hover{ background:var(--yel); color:var(--ink); } }
+@media (hover:hover){ .btn:not(.fill):hover{ background:var(--ink); color:var(--bg); } .btn.fill:hover{ background:transparent; color:var(--ink); } }
 
 /* 헤더 */
 .site-head{ position:sticky; top:0; z-index:50; background:rgba(252,243,226,.94); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-bottom:2px solid var(--ink); }
@@ -97,14 +95,13 @@ p{ margin:0; }
 @media (min-width:900px){ .hero{ padding:70px 0 110px; } .hero .wrap{ grid-template-columns:1.05fr .95fr; gap:64px; } }
 .hero .cat{ width:min(56%,280px); }
 .hero h1{ font-family:var(--serif); font-weight:800; font-size:clamp(2.4rem,7vw,4.4rem); line-height:1.02; letter-spacing:-.02em; margin-top:26px; }
-.hero h1 em{ font-style:normal; background:var(--yel); padding:0 .12em; }
 .hero .ko-l{ font-family:var(--round); font-size:clamp(1.25rem,3vw,1.6rem); margin-top:18px; }
 .hero .d{ margin-top:12px; color:var(--soft); max-width:30em; }
 .hero .cta{ display:flex; flex-wrap:wrap; gap:8px; margin-top:28px; }
 .hero .hours{ margin-top:16px; font-size:.88rem; color:var(--soft); }
 .hero figure{ margin:0; position:relative; }
 .hero figure img{ width:100%; aspect-ratio:4/5; object-fit:cover; border:2px solid var(--ink); border-radius:4px; }
-.hero figure .badge{ position:absolute; left:-12px; bottom:22px; background:var(--yel); border:2px solid var(--ink); padding:8px 14px; font-family:var(--serif); font-weight:800; font-size:1rem; transform:rotate(-4deg); border-radius:4px; }
+.hero figure .badge{ position:absolute; left:-12px; bottom:22px; background:var(--ink); color:var(--bg); border:2px solid var(--ink); padding:8px 14px; font-family:var(--serif); font-weight:800; font-size:1rem; transform:rotate(-4deg); border-radius:4px; }
 
 /* 샌드베이글 */
 #sandbagel{ border-top:2px solid var(--ink); }
@@ -114,7 +111,7 @@ p{ margin:0; }
 .sb-g img{ width:100%; aspect-ratio:4/5; object-fit:cover; border:2px solid var(--ink); border-radius:4px; }
 .sb-g figcaption{ margin-top:8px; font-family:var(--round); font-size:1rem; }
 .sb-note{ margin-top:26px; display:flex; flex-wrap:wrap; align-items:center; gap:10px 16px; }
-.chip{ display:inline-block; background:var(--yel); border:2px solid var(--ink); padding:4px 12px; font-family:var(--round); font-size:.95rem; border-radius:4px; }
+.chip{ display:inline-block; background:transparent; border:2px solid var(--ink); padding:4px 12px; font-family:var(--round); font-size:.95rem; border-radius:4px; }
 .sb-note p{ color:var(--soft); font-size:.92rem; }
 
 /* 디저트 (흰 면) */
@@ -141,8 +138,8 @@ p{ margin:0; }
 .notice img{ width:min(46%,220px); }
 .notice h2{ font-family:var(--serif); font-weight:800; font-size:clamp(1.9rem,5vw,3rem); line-height:1.1; }
 .notice p{ font-family:var(--round); font-size:1.15rem; color:var(--dark-soft); margin-top:10px; }
-.notice .btn{ border-color:var(--yel); background:var(--yel); color:var(--ink); }
-@media (hover:hover){ .notice .btn:hover{ background:transparent; color:var(--yel); } }
+.notice .btn{ border-color:var(--bg); background:var(--bg); color:var(--ink); }
+@media (hover:hover){ .notice .btn:hover{ background:transparent; color:var(--bg); } }
 
 /* 오시는 길 */
 .visit{ display:grid; gap:36px; margin-top:42px; }
@@ -189,7 +186,7 @@ p{ margin:0; }
     <div class="wrap">
       <div class="reveal">
         <img class="cat" src="bc-cat.webp" alt="노란 눈의 검은 고양이 캐릭터와 Bay Chic 글씨" width="700" height="618" />
-        <h1>Sand Bagel,<br /><em>Brownie</em> &amp; Cheesecake</h1>
+        <h1>Sand Bagel,<br />Brownie &amp; Cheesecake</h1>
         <p class="ko-l">쫀득하고 부드러운 베이글</p>
         <p class="d">쫀득하고 부드러운 베이글과 직접 수제로 만들어 퀄리티 있는 브라우니 · 치즈케이크, 동물성 생크림 등을 넣은 샌드베이글이 있는 디저트 샵 :)</p>
         <div class="cta">
