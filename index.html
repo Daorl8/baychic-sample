@@ -135,7 +135,7 @@ p{ margin:0; }
 /* 라인업 공지 (검정 면 + 고양이) */
 .notice{ background:var(--ink); color:var(--bg); }
 .notice .wrap{ display:grid; gap:26px; align-items:center; text-align:center; justify-items:center; }
-.notice img{ width:min(46%,220px); }
+.notice img{ width:clamp(150px,40vw,200px); aspect-ratio:1; object-fit:contain; padding:20px; background:var(--bg); border-radius:50%; }
 .notice h2{ font-family:var(--serif); font-weight:800; font-size:clamp(1.9rem,5vw,3rem); line-height:1.1; }
 .notice p{ font-family:var(--round); font-size:1.15rem; color:var(--dark-soft); margin-top:10px; }
 .notice .btn{ border-color:var(--bg); background:var(--bg); color:var(--ink); }
